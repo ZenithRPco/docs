@@ -1,98 +1,70 @@
 ---
-title: 'Development'
-description: 'Learn how to preview changes locally'
+title: 'Creating a Development Server'
+description: 'Learn how to get a local development server up and running'
+icon: 'hammer'
 ---
 
 <Info>
-  **Prerequisite** You should have installed Node.js (version 18.10.0 or
-  higher).
+  **Prerequisites** - You should have these installed:
+    - [Visual Studio Code](https://code.visualstudio.com/) • To edit the code
+    - [Task Runner](https://marketplace.visualstudio.com/items?itemName=SanaAjani.taskrunnercode) • For running & terminating tasks
+    - [Git](https://git-scm.com/) • For commiting/uploading code to our repository
+    - [VSCode GLua Enhanced](https://marketplace.visualstudio.com/items?itemName=venner.vscode-glua-enhanced) • Syntax highlighting
+    - [Node.JS LTS/Current](https://nodejs.org/en) • Used for versioning & pre-commit hooks
+    - [GLuaFixer](https://github.com/FPtje/GLuaFixer) • Used for linting your code
 </Info>
 
-Step 1. Install Mintlify on your OS:
+Step 1. Clone the server to your desired location:
 
-<CodeGroup>
-
-```bash npm
-npm i -g mintlify
+```bash Git Bash
+git clone https://github.com/ZenithRPco/ZenithRP game-server
 ```
 
-```bash yarn
-yarn global add mintlify
+Step 2. Go to the newly created `game-server` directory, install all of the NPM packages & open visual studio code.
+
+```bash Git Bash
+cd game-server
+npm i
+code .
 ```
-
-</CodeGroup>
-
-Step 2. Go to the docs are located (where you can find `mint.json`) and run the following command:
-
-```bash
-mintlify dev
-```
-
-The documentation website is now available at `http://localhost:3000`.
-
-### Custom Ports
-
-Mintlify uses port 3000 by default. You can use the `--port` flag to customize the port Mintlify runs on. For example, use this command to run in port 3333:
-
-```bash
-mintlify dev --port 3333
-```
-
-You will see an error like this if you try to run Mintlify in a port that's already taken:
-
-```md
-Error: listen EADDRINUSE: address already in use :::3000
-```
-
-## Mintlify Versions
-
-Each CLI is linked to a specific version of Mintlify. Please update the CLI if your local website looks different than production.
-
-<CodeGroup>
-
-```bash npm
-npm i -g mintlify@latest
-```
-
-```bash yarn
-yarn global upgrade mintlify
-```
-
-</CodeGroup>
-
-## Deployment
 
 <Tip>
-  Unlimited editors available under the [Startup
-  Plan](https://mintlify.com/pricing)
+  Having issues installing the server due to error 0x602? Then checkout [Troubleshooting](#troubleshooting)
 </Tip>
 
-You should see the following if the deploy successfully went through:
+Step 3. If you have the "Task Runner" extension installed in VSCode, you can simply press "Install Server" in the task list to run the "Install Server" script. If not, then you can do the following
 
-<Frame>
-  <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
-</Frame>
+```ps PowerShell
+./_scripts/install_server.ps1
+```
+
+Step 4. Once the server is installed, if you have the "Task Runner" extension installed in VSCode, you can simply press "Run Server" in the task list to run the "Run Server" script.
+
+```ps PowerShell
+./_scripts/run_server.ps1
+```
+
+Step 5. You are all done! 🎉<br />
+To connect to the server, use the "Connect" task or find it in the legacy server browser. If there is a password, you will need to enter it before you can connect. The password is `ZenithRPcoDEV`
 
 ## Troubleshooting
 
-Here's how to solve some common problems when working with the CLI.
+Here's how to solve some common problems when working with installing the development server.
 
 <AccordionGroup>
-  <Accordion title="Mintlify is not loading">
-    Update to Node v18. Run `mintlify install` and try again.
-  </Accordion>
-  <Accordion title="No such file or directory on Windows">
-Go to the `C:/Users/Username/.mintlify/` directory and remove the `mint`
-folder. Then Open the Git Bash in this location and run `git clone
-https://github.com/mintlify/mint.git`.
-
-Repeat step 3.
-
-  </Accordion>
-  <Accordion title="Getting an unknown error">
-    Try navigating to the root of your device and delete the ~/.mintlify folder.
-    Then run `mintlify dev` again.
+  <Accordion title="SteamCMD - App state is 0x602 after update job">
+    <Info>
+      You can safely ignore any errors that you may see whilst installing [GMOD-Development-Environment](https://github.com/8char/GMOD-Development-Environment) pertaining to the Atlas Framework installation
+    </Info>
+    1. Go and clone the [GMOD-Development-Environment](https://github.com/8char/GMOD-Development-Environment) repository.
+    2. Run the install scripts via task runner in vscode.
+    3. Copy over the `gmod` directory once it has installed in the `_scripts` directory in [GMOD-Development-Environment](https://github.com/8char/GMOD-Development-Environment) over to your `game-server/_server` directory.
+    4. Delete the following directories from `game-server/_server`: `lua`, `maps`, `gamemodes`, `cfg` & `addons`
+    5. Run the junction creator script:
+    ```bash Git Bash
+    ./_scripts/create_links.bat
+    ```
   </Accordion>
 </AccordionGroup>
 
-Curious about what changed in a CLI version? [Check out the CLI changelog.](/changelog/command-line)
+Curious about what changed in an update? [Check out the server changelog.](https://github.com/ZenithRPco/ZenithRP/blob/main/CHANGELOG.md)

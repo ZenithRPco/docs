@@ -7,9 +7,12 @@
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#12A7D3",
+    "primary": "#06BCEE",
     "light": "#81D7F7",
-    "dark": "#004E7A"
+    "dark": "#06A6D1",
+    "background": {
+      "dark": "#111111"
+    }
   },
   "topbarLinks": [
     {
@@ -21,10 +24,16 @@
     "name": "Dashboard",
     "url": "https://dashboard.mintlify.com"
   },
-  "tabs": [
+  "anchors": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Discord",
+      "icon": "discord",
+      "url": "https://discord.gg/zenithrpco"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/ZenithRPco"
     }
   ],
   "navigation": [
@@ -35,25 +44,12 @@
     {
       "group": "Essentials",
       "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
-    {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
-      ]
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "discord": "https://discord.gg/zenithrpco",
+    "github": "https://github.com/ZenithRPco",
+    "website": "https://zenithrp.co/"
   },
   "backgroundImage": "/background.png"
 }
