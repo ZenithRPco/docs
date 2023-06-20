@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "ZenithRP Docs",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
@@ -14,15 +14,9 @@
       "dark": "#111111"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Documentation",
-      "url": "https://mintlify.com/docs"
-    }
-  ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "type": "github",
+    "url": "https://github.com/ZenithRPco/.github"
   },
   "anchors": [
     {
@@ -51,5 +45,5 @@
     "github": "https://github.com/ZenithRPco",
     "website": "https://zenithrp.co/"
   },
-  "backgroundImage": "/background.png"
+  "backgroundImage": "/images/background.png"
 }
